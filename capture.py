@@ -30,7 +30,7 @@ class WindowCapture:
         self.h = 600
 
         # Offset pixels
-        # x = 600, y = 200 for center region
+        # x = 700, y = 150 for center region
         self.offset_x = 700
         self.offset_y = 150
 
@@ -45,7 +45,7 @@ class WindowCapture:
         dataBitMap.CreateCompatibleBitmap(dcObj, self.w, self.h)
         cDC.SelectObject(dataBitMap)
         # Set 4th argument for screen offset
-        cDC.BitBlt((0, 0), (self.w, self.h), dcObj, (700, 150), win32con.SRCCOPY)
+        cDC.BitBlt((0, 0), (self.w, self.h), dcObj, (self.offset_x, self.offset_y), win32con.SRCCOPY)
 
         # Save screeshot to bitmap file
         # dataBitMap.SaveBitmapFile(cDC, r'captures\debug.bmp')

@@ -12,10 +12,10 @@ OpenCV Doc:
 class Vision:
 
     # Properties
-    needle_img = None
-    needle_w = 0
-    needdle_h = 0
-    method = None
+    # needle_img = None
+    # needle_w = 0
+    # needdle_h = 0
+    # method = None
 
     # Constructor
     def __init__(self, needle_img_path, method=cv.TM_CCOEFF_NORMED):

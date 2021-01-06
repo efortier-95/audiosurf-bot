@@ -21,19 +21,28 @@ def write_data(img, frames, detected):
     font = cv.FONT_HERSHEY_SIMPLEX
 
     # Bottom left corner of text
-    blocks_location = (5, 15)
+    threshold_location = (5, 15)
+    blocks_location = (5, 35)
     frames_location = (425, 15)
 
     font_scale = 1 / 2
-    font_color = (0, 255, 0)
+
+    # Colors for text
+    white = (255, 255, 255)
+    green = (0, 255, 0)
+    red = (0, 0, 255)
+
     line_type = 2
 
-    cv.putText(img, f'Detected: {detected}', blocks_location, font, font_scale, font_color, line_type)
-    cv.putText(img, f'FPS: {frames}', frames_location, font, font_scale, font_color, line_type)
+    cv.putText(img, '60% Threshold', threshold_location, font, font_scale, white, line_type)
+    cv.putText(img, f'Detected: {detected}', blocks_location, font, font_scale, green, line_type)
+    cv.putText(img, f'FPS: {frames}', frames_location, font, font_scale, red, line_type)
 
 
 # Initialization of classes
 wincap = WindowCapture('Audiosurf 2')
+
+#
 vision = Vision(r'images\block_center.png', methods['CCOEFF_NORMED'])
 
 print('Start\n')
