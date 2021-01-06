@@ -1,33 +1,61 @@
 import cv2 as cv
 from time import time
-from window_capture import WindowCapture
+from capture import WindowCapture
 from vision import Vision
 
-# List window names and exit before capture
-# WindowCapture.list_window_names()
-# exit()
+# Template matching methods
+methods = {
+    # Global max
+    'CCOEFF': cv.TM_CCOEFF,
+    'CCOEFF_NORMED': cv.TM_CCOEFF_NORMED,
+    'CCORR': cv.TM_CCORR,
+    'CCORR_NORMED': cv.TM_CCORR_NORMED,
+    # Global min
+    'SQDIFF': cv.TM_SQDIFF,
+    'SQDIFF_NORMED': cv.TM_SQDIFF_NORMED
+}
+
+
+# Write data to image
+def write_data(img, frames, detected):
+    font = cv.FONT_HERSHEY_SIMPLEX
+
+    # Bottom left corner of text
+    blocks_location = (5, 15)
+    frames_location = (425, 15)
+
+    font_scale = 1 / 2
+    font_color = (0, 255, 0)
+    line_type = 2
+
+    cv.putText(img, f'Detected: {detected}', blocks_location, font, font_scale, font_color, line_type)
+    cv.putText(img, f'FPS: {frames}', frames_location, font, font_scale, font_color, line_type)
+
 
 # Initialization of classes
-wincap = WindowCapture()
-# wincap = WindowCapture('Audiosurf 2')
-vision = Vision(r'images\block_center.png')
+wincap = WindowCapture('Audiosurf 2')
+vision = Vision(r'images\block_center.png', methods['CCOEFF_NORMED'])
 
 print('Start\n')
 
+blocks = 0
 loop_time = time()
 while True:
 
     # Capture screenshot from window
     screenshot = wincap.get_screenshot()
 
-    # Display processed image
-    points = vision.find(screenshot, 0.6, 'points')
-
-    # Measure fps
-    passed_time = time() - loop_time
-    fps = 1 / passed_time
-    print(f'FPS: {fps:.2f}\n')
+    # Measure FPS and write on screen
+    fps = str(int(1 / (time() - loop_time)))
     loop_time = time()
+    write_data(screenshot, fps, blocks)
+
+    # Display processed image
+    points = vision.find(screenshot, 0.6, 'rectangles')
+
+    # Add blocks to total
+    if points:
+        blocks += 1
 
     # Press 'q' with the output window focused to exit
     # Wait 1 ms every loop to process key presses

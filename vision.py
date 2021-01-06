@@ -17,19 +17,8 @@ class Vision:
     needdle_h = 0
     method = None
 
-    methods = {
-        # Global max
-        'CCOEFF': cv.TM_CCOEFF,
-        'CCOEFF_NORMED': cv.TM_CCOEFF_NORMED,
-        'CCORR': cv.TM_CCORR,
-        'CCORR_NORMED': cv.TM_CCORR_NORMED,
-        # Global min
-        'SQDIFF': cv.TM_SQDIFF,
-        'SQDIFF_NORMED': cv.TM_SQDIFF_NORMED
-    }
-
     # Constructor
-    def __init__(self, needle_img_path, method=methods['CCORR_NORMED']):
+    def __init__(self, needle_img_path, method=cv.TM_CCOEFF_NORMED):
         # Load image to match
         # Flag -1 for original
         # Flag 17 for 1/2 size color
@@ -42,6 +31,9 @@ class Vision:
 
         # Compare template against image
         self.method = method
+
+        # Total block detected
+        self.blocks = 0
 
     def find(self, haystack_img, threshold=0.5, debug_mode=None):
 
@@ -69,12 +61,13 @@ class Vision:
 
         # Group overlapping rectangles
         rectangles, weights = cv.groupRectangles(rectangles, 1, 0.5)
-        print(rectangles)
 
         # Draw rectangles around all matched locations
         points = []
         if len(rectangles):
-            print('Found needle')
+
+            # Add block to total
+            self.blocks += 1
 
             # Rectangle parameters
             line_color = (0, 255, 0)
