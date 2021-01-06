@@ -1,2 +1,2 @@
-# audiosurf-bot
+# Audiosurf Bot
 Audiosurf image detection bot
