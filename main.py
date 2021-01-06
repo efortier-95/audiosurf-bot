@@ -2,6 +2,7 @@ import cv2 as cv
 from time import time
 from capture import WindowCapture
 from vision import Vision
+from hsv import HSVFilter
 
 # Template matching methods
 methods = {
@@ -15,14 +16,16 @@ methods = {
     'SQDIFF_NORMED': cv.TM_SQDIFF_NORMED
 }
 
+# HSV filtered block
+# hsv_filter = HSVFilter()
+
 
 # Write data to image
 def write_data(img, frames, detected):
     font = cv.FONT_HERSHEY_SIMPLEX
 
     # Bottom left corner of text
-    threshold_location = (5, 15)
-    blocks_location = (5, 35)
+    blocks_location = (5, 15)
     frames_location = (425, 15)
 
     font_scale = 1 / 2
@@ -30,20 +33,19 @@ def write_data(img, frames, detected):
     # Colors for text
     white = (255, 255, 255)
     green = (0, 255, 0)
-    red = (0, 0, 255)
 
     line_type = 2
 
-    cv.putText(img, '60% Threshold', threshold_location, font, font_scale, white, line_type)
     cv.putText(img, f'Detected: {detected}', blocks_location, font, font_scale, green, line_type)
-    cv.putText(img, f'FPS: {frames}', frames_location, font, font_scale, red, line_type)
+    cv.putText(img, f'FPS: {frames}', frames_location, font, font_scale, white, line_type)
 
 
 # Initialization of classes
 wincap = WindowCapture('Audiosurf 2')
-
-#
 vision = Vision(r'images\block_center.png', methods['CCOEFF_NORMED'])
+
+# Create trackbar window
+vision.init_control_gui()
 
 print('Start\n')
 
@@ -59,11 +61,20 @@ while True:
     loop_time = time()
     write_data(screenshot, fps, blocks)
 
+    # Preprocess image to highlight object
+    # processed_img = vision.apply_hsv_filter(screenshot, hsv_filter)
+
+    # Image detection
+    rectangles = vision.find(screenshot, 0.6)
+
+    # Draw detection results to image
+    output = vision.draw_rectangles(screenshot, rectangles)
+
     # Display processed image
-    points = vision.find(screenshot, 0.6, 'rectangles')
+    cv.imshow('Audiosurf 2 Image Detection', output)
 
     # Add blocks to total
-    if points:
+    if len(rectangles) > 0:
         blocks += 1
 
     # Press 'q' with the output window focused to exit
