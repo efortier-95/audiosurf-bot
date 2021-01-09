@@ -1,13 +1,14 @@
 import cv2 as cv
 import numpy as np
 from hsv import HSVFilter
+from edge import EdgeFilter
 
-'''
+"""
 OpenCV Doc:
 - Object Detection: https://docs.opencv.org/4.5.1/df/dfb/group__imgproc__object.html
 - Flags: https://docs.opencv.org/3.4/d8/d6a/group__imgcodecs__flags.html
 - Template Matching Example: https://docs.opencv.org/4.5.1/d4/dc6/tutorial_py_template_matching.html
-'''
+"""
 
 
 class Vision:
@@ -77,6 +78,60 @@ class Vision:
 
         return rectangles
 
+    # Match keypoints in needle image against the template
+    def match_keypoints(self, original_img, patch_size=32):
+
+        # Minimum number of detections for match
+        min_match_count = 5
+
+        # Number of features on needle and template images
+        orb = cv.ORB_create(edgeThreshold=0, patchSize=patch_size)
+        keypoints_needle, descriptors_needle = orb.detectAndCompute(self.needle_img, None)
+        orb2 = cv.ORB_create(edgeThreshold=0, patchSize=patch_size, nfeatures=2000)
+        keypoints_haystack, descriptors_haystack = orb2.detectAndCompute(original_img, None)
+
+        FLANN_INDEX_LSH = 6
+        index_params = dict(algorithm=FLANN_INDEX_LSH,
+                            table_number=6,
+                            key_size=12,
+                            multi_probe_level=1)
+
+        search_params = dict(checks=50)
+
+        try:
+            flann = cv.FlannBasedMatcher(index_params, search_params)
+            matches = flann.knnMatch(descriptors_needle, descriptors_haystack, k=2)
+        except cv.error:
+            return None, None, [], [], None
+
+        # Store all the good matches as per Lowe's ratio test.
+        good = []
+        points = []
+
+        # Look at distance to determine match
+        for pair in matches:
+            if len(pair) == 2:
+                if pair[0].distance < 0.7 * pair[1].distance:
+                    good.append(pair[0])
+
+        # If matches are more than threshold, return value
+        if len(good) > min_match_count:
+            print('match %03d, kp %03d' % (len(good), len(keypoints_needle)))
+            for match in good:
+                points.append(keypoints_haystack[match.trainIdx].pt)
+            # print(points)
+
+        return keypoints_needle, keypoints_haystack, good, points
+
+    # Find average of all matched keypoints in template image
+    @staticmethod
+    def centroid(point_list):
+        point_list = np.asarray(point_list, dtype=np.int32)
+        length = point_list.shape[0]
+        sum_x = np.sum(point_list[:, 0])
+        sum_y = np.sum(point_list[:, 1])
+        return [np.floor_divide(sum_x, length), np.floor_divide(sum_y, length)]
+
     @staticmethod
     def get_click_points(rectangles):
 
@@ -101,7 +156,7 @@ class Vision:
 
         # BGR colors
         line_color = (0, 255, 0)
-        line_type = cv.LINE_4
+        line_type = cv.LINE_8
 
         for (x, y, w, h) in rectangles:
 
@@ -156,6 +211,18 @@ class Vision:
         cv.createTrackbar('VAdd', self.TRACKBAR_WINDOW, 0, 255, nothing)
         cv.createTrackbar('VSub', self.TRACKBAR_WINDOW, 0, 255, nothing)
 
+        # Trackbars for edge creation
+        cv.createTrackbar('KernelSize', self.TRACKBAR_WINDOW, 1, 30, nothing)
+        cv.createTrackbar('ErodeIter', self.TRACKBAR_WINDOW, 1, 5, nothing)
+        cv.createTrackbar('DilateIter', self.TRACKBAR_WINDOW, 1, 5, nothing)
+        cv.createTrackbar('Canny1', self.TRACKBAR_WINDOW, 0, 200, nothing)
+        cv.createTrackbar('Canny2', self.TRACKBAR_WINDOW, 0, 500, nothing)
+
+        # Default value for Canny edge
+        cv.setTrackbarPos('KernelSize', self.TRACKBAR_WINDOW, 5)
+        cv.setTrackbarPos('Canny1', self.TRACKBAR_WINDOW, 100)
+        cv.setTrackbarPos('Canny2', self.TRACKBAR_WINDOW, 200)
+
     # Return HSV filter based on GUI controls
     def get_hsv_filter_from_controls(self):
 
@@ -173,6 +240,18 @@ class Vision:
         hsv_filter.vSub = cv.getTrackbarPos('VSub', self.TRACKBAR_WINDOW)
 
         return hsv_filter
+
+    # Return Canny edge filter based on GUI controls
+    def get_edge_filter_from_controls(self):
+
+        # Get current positions of all trackbars
+        edge_filter = EdgeFilter()
+        edge_filter.kernelSize = cv.getTrackbarPos('KernelSize', self.TRACKBAR_WINDOW)
+        edge_filter.erodeIter = cv.getTrackbarPos('ErodeIter', self.TRACKBAR_WINDOW)
+        edge_filter.dilateIter = cv.getTrackbarPos('DilateIter', self.TRACKBAR_WINDOW)
+        edge_filter.canny1 = cv.getTrackbarPos('Canny1', self.TRACKBAR_WINDOW)
+        edge_filter.canny2 = cv.getTrackbarPos('Canny2', self.TRACKBAR_WINDOW)
+        return edge_filter
 
     # Apply HSV filter
     def apply_hsv_filter(self, original_img, hsv_filter=None):
@@ -202,6 +281,25 @@ class Vision:
 
         # Convert back to BGR for display
         img = cv.cvtColor(result, cv.COLOR_HSV2BGR)
+
+        return img
+
+    # Apply Canny edge filter
+    def apply_edge_filter(self, original_img, edge_filter=None):
+
+        # If no filter given, use filter values from GUI controls
+        if not edge_filter:
+            edge_filter = self.get_edge_filter_from_controls()
+
+        kernel = np.ones((edge_filter.kernelSize, edge_filter.kernelSize), np.uint8)
+        eroded_img = cv.erode(original_img, kernel, iterations=edge_filter.erodeIter)
+        dilated_img = cv.dilate(eroded_img, kernel, iterations=edge_filter.dilateIter)
+
+        # Canny edge detection
+        result = cv.Canny(dilated_img, edge_filter.canny1, edge_filter.canny2)
+
+        # Convert single channel image back to BGR
+        img = cv.cvtColor(result, cv.COLOR_GRAY2BGR)
 
         return img
 
