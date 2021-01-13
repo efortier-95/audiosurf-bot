@@ -1,4 +1,7 @@
 __pycache__/
 .idea/
+negative/
+opencv
+positive/
 screenshots/
 venv/

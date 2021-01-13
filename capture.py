@@ -26,13 +26,13 @@ class WindowCapture:
                 raise Exception(f'Window not found: {window_name}')
 
         # Screen dimensions
-        self.w = 500
-        self.h = 600
+        self.w = 1000
+        self.h = 700
 
         # Offset pixels
         # x = 700, y = 150 for center region
-        self.offset_x = 700
-        self.offset_y = 150
+        self.offset_x = 500
+        self.offset_y = 200
 
     # Capture window screenshot
     def get_screenshot(self):

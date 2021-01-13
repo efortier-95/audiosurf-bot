@@ -23,16 +23,17 @@ class Vision:
     method = None
 
     # Constructor
-    def __init__(self, needle_img_path, method=cv.TM_CCOEFF_NORMED):
-        # Load image to match
-        # Flag -1 for original
-        # Flag 17 for 1/2 size color
-        # Flag 33 for 1/4 size color
-        self.needle_img = cv.imread(needle_img_path, 17)
+    def __init__(self, needle_img_path=None, method=cv.TM_CCOEFF_NORMED):
+        if needle_img_path:
+            # Load image to match
+            # Flag -1 for original
+            # Flag 17 for 1/2 size color
+            # Flag 33 for 1/4 size color
+            self.needle_img = cv.imread(needle_img_path, 17)
 
-        # Needle image dimensions
-        self.needle_w = self.needle_img.shape[1]
-        self.needle_h = self.needle_img.shape[0]
+            # Needle image dimensions
+            self.needle_w = self.needle_img.shape[1]
+            self.needle_h = self.needle_img.shape[0]
 
         # Compare template against image
         self.method = method
@@ -156,7 +157,7 @@ class Vision:
 
         # BGR colors
         line_color = (0, 255, 0)
-        line_type = cv.LINE_8
+        line_type = 2
 
         for (x, y, w, h) in rectangles:
 
