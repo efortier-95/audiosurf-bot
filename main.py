@@ -3,12 +3,6 @@ from time import time
 from capture import WindowCapture
 from vision import Vision
 
-"""
-Docs:
-- Cascade Classifier: https://docs.opencv.org/4.2.0/db/d28/tutorial_cascade_classifier.html
-- Train Cascade: https://docs.opencv.org/4.2.0/dc/d88/tutorial_traincascade.html
-- Install OpenCV: https://docs.opencv.org/3.4.11/d3/d52/tutorial_windows_install.html
-"""
 
 # Template matching methods
 methods = {

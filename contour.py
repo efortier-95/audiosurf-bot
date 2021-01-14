@@ -1,7 +1,7 @@
 import cv2 as cv
 
 # Total number of images
-img_count = 5331
+img_count = 0
 
 # Outline and crop
 idx = 0

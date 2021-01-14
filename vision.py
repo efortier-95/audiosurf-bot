@@ -3,6 +3,7 @@ import numpy as np
 from hsv import HSVFilter
 from edge import EdgeFilter
 
+
 """
 OpenCV Doc:
 - Object Detection: https://docs.opencv.org/4.5.1/df/dfb/group__imgproc__object.html
@@ -167,6 +168,7 @@ class Vision:
 
             # Draw rectangle
             cv.rectangle(haystack_img, top_left, bottom_right, line_color, line_type)
+            cv.putText(haystack_img, 'Block', (x, y - 10), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
         return haystack_img
 
