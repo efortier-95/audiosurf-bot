@@ -1,7 +1,8 @@
 __pycache__/
 .idea/
-negative/
+negative_block/
 opencv
-positive/
-screenshots/
+positive_block
+positive_spike
+raw_images/
 venv/

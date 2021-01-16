@@ -26,12 +26,12 @@ class WindowCapture:
                 raise Exception(f'Window not found: {window_name}')
 
         # Screen dimensions
-        self.w = 1000
-        self.h = 700
+        self.w = 600
+        self.h = 500
 
         # Offset pixels
-        # x = 700, y = 150 for center region
-        self.offset_x = 500
+        # x = 650, y = 200 for center region
+        self.offset_x = 650
         self.offset_y = 200
 
     # Capture window screenshot

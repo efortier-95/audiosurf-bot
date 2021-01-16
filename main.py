@@ -1,5 +1,5 @@
 import cv2 as cv
-from time import time
+from time import time, sleep
 from capture import WindowCapture
 from vision import Vision
 
@@ -16,12 +16,28 @@ methods = {
     'SQDIFF_NORMED': cv.TM_SQDIFF_NORMED
 }
 
+
+# Write to capture screen
+def write_data(img, frames):
+
+    # Bottom left corner of text
+    fps_loc = (525, 15)
+
+    font = cv.FONT_HERSHEY_SIMPLEX
+    font_scale = 0.5
+    white = (255, 255, 255)
+    line_type = 2
+
+    cv.putText(img, f'FPS: {frames}', fps_loc, font, font_scale, white, line_type)
+
+
 # Initialization of classes
 wincap = WindowCapture('Audiosurf 2')
 vision = Vision()
 
-# Load trained cascade model
-cascade = cv.CascadeClassifier(r'cascade\cascade.xml')
+# Load trained cascade_block model
+block = cv.CascadeClassifier(r'cascade_block\cascade.xml')
+# spike = cv.CascadeClassifier(r'cascade_spike\cascade.xml')
 
 print('Start\n')
 
@@ -33,22 +49,26 @@ while True:
     screenshot = wincap.get_screenshot()
 
     # Image detection
-    rectangles = cascade.detectMultiScale(screenshot)
+    detect_block = block.detectMultiScale(screenshot)
+    # detect_spike = spike.detectMultiScale(screenshot)
 
     # Draw detected results on image
-    detection = vision.draw_rectangles(screenshot, rectangles)
-
-    # Display image
-    cv.imshow('Audiosurf 2 Image Detection', screenshot)
+    draw_block = vision.draw_rectangles(screenshot, detect_block, (0, 255, 0), 'Block')
+    # draw_spike = vision.draw_rectangles(screenshot, detect_spike, (0, 0, 255))
 
     # Measure FPS
     fps = int(1 / (time() - loop_time))
     loop_time = time()
-    print(f'FPS: {fps}')
+
+    # Write data on screen
+    write_data(screenshot, fps)
+
+    # Display image
+    cv.imshow('Audiosurf 2 Image Detection', screenshot)
 
     # Take screenshots
-    # cv.imwrite(fr'screenshots\{img_count}.jpg', screenshot)
-    # sleep(0.5)
+    # cv.imwrite(fr'raw_images\right\right_{img_count}.jpg', screenshot)
+    # sleep(0.2)
     # img_count += 1
 
     # Press 'q' with the output window focused to exit

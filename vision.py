@@ -4,14 +4,6 @@ from hsv import HSVFilter
 from edge import EdgeFilter
 
 
-"""
-OpenCV Doc:
-- Object Detection: https://docs.opencv.org/4.5.1/df/dfb/group__imgproc__object.html
-- Flags: https://docs.opencv.org/3.4/d8/d6a/group__imgcodecs__flags.html
-- Template Matching Example: https://docs.opencv.org/4.5.1/d4/dc6/tutorial_py_template_matching.html
-"""
-
-
 class Vision:
 
     # Constants
@@ -39,7 +31,7 @@ class Vision:
         # Compare template against image
         self.method = method
 
-        # Total block detected
+        # Total cascade_block detected
         self.blocks = 0
 
     def find(self, haystack_img, threshold=0.5, max_results=10):
@@ -86,7 +78,7 @@ class Vision:
         # Minimum number of detections for match
         min_match_count = 5
 
-        # Number of features on needle and template images
+        # Number of features on needle and template raw_images
         orb = cv.ORB_create(edgeThreshold=0, patchSize=patch_size)
         keypoints_needle, descriptors_needle = orb.detectAndCompute(self.needle_img, None)
         orb2 = cv.ORB_create(edgeThreshold=0, patchSize=patch_size, nfeatures=2000)
@@ -154,10 +146,9 @@ class Vision:
 
     # Draw rectangles on image from list of [x, y, w, h] positions
     @staticmethod
-    def draw_rectangles(haystack_img, rectangles):
+    def draw_rectangles(haystack_img, rectangles, color, text):
 
-        # BGR colors
-        line_color = (0, 255, 0)
+        font_scale = 0.5
         line_type = 2
 
         for (x, y, w, h) in rectangles:
@@ -167,21 +158,22 @@ class Vision:
             bottom_right = (x + w, y + h)
 
             # Draw rectangle
-            cv.rectangle(haystack_img, top_left, bottom_right, line_color, line_type)
-            cv.putText(haystack_img, 'Block', (x, y - 10), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+            cv.rectangle(haystack_img, top_left, bottom_right, color, line_type)
+
+            # Text overlay
+            cv.putText(haystack_img, text, (x, y - 5), cv.FONT_HERSHEY_SIMPLEX, font_scale, color, line_type)
 
         return haystack_img
 
     # Draw crosshairs on image from list of [x, y] positions
     @staticmethod
-    def draw_crosshairs(haystack_img, points):
+    def draw_crosshairs(haystack_img, points, color):
 
         # Marker parameters
-        marker_color = (0, 255, 0)
         marker_type = cv.MARKER_CROSS
 
         for (center_x, center_y) in points:
-            cv.drawMarker(haystack_img, (center_x, center_y), marker_color, marker_type)
+            cv.drawMarker(haystack_img, (center_x, center_y), color, marker_type)
 
         return haystack_img
 

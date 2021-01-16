@@ -2,10 +2,10 @@ import os
 
 
 # Change directory paths to rename all files inside
-directory = r'C:\Users\nguye\Documents\Projects\audiosurf-bot\negative'
+directory = r'C:\Users\nguye\Documents\Projects\audiosurf-bot\negative_block\Blocks'
 
-# Rename screenshot images starting from 0
-img_count = 0
+# Rename screenshot raw_images starting from 0
+img_count = 350
 extension = '.jpg'
 for img in os.listdir(directory):
     if img.endswith(extension):
