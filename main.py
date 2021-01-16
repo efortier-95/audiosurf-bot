@@ -4,19 +4,6 @@ from capture import WindowCapture
 from vision import Vision
 
 
-# Template matching methods
-methods = {
-    # Global max
-    'CCOEFF': cv.TM_CCOEFF,
-    'CCOEFF_NORMED': cv.TM_CCOEFF_NORMED,
-    'CCORR': cv.TM_CCORR,
-    'CCORR_NORMED': cv.TM_CCORR_NORMED,
-    # Global min
-    'SQDIFF': cv.TM_SQDIFF,
-    'SQDIFF_NORMED': cv.TM_SQDIFF_NORMED
-}
-
-
 # Write to capture screen
 def write_data(img, frames):
 
@@ -71,8 +58,7 @@ while True:
     # sleep(0.2)
     # img_count += 1
 
-    # Press 'q' with the output window focused to exit
-    # Wait 1 ms every loop to process key presses
+    # Press 'q' on capture screen to exit
     key = cv.waitKey(1)
     if key == ord('q'):
         cv.destroyAllWindows()
