@@ -1,6 +1,7 @@
 __pycache__/
 .idea/
 negative_block/
+negative_spike/
 opencv
 positive_block
 positive_spike

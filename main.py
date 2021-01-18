@@ -24,7 +24,7 @@ vision = Vision()
 
 # Load trained cascade_block model
 block = cv.CascadeClassifier(r'cascade_block\cascade.xml')
-# spike = cv.CascadeClassifier(r'cascade_spike\cascade.xml')
+spike = cv.CascadeClassifier(r'cascade_spike\cascade.xml')
 
 print('Start\n')
 
@@ -37,11 +37,11 @@ while True:
 
     # Image detection
     detect_block = block.detectMultiScale(screenshot)
-    # detect_spike = spike.detectMultiScale(screenshot)
+    detect_spike = spike.detectMultiScale(screenshot)
 
     # Draw detected results on image
     draw_block = vision.draw_rectangles(screenshot, detect_block, (0, 255, 0), 'Block')
-    # draw_spike = vision.draw_rectangles(screenshot, detect_spike, (0, 0, 255))
+    draw_spike = vision.draw_rectangles(screenshot, detect_spike, (0, 0, 255), 'Spike')
 
     # Measure FPS
     fps = int(1 / (time() - loop_time))

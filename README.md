@@ -1,6 +1,6 @@
 # Audiosurf 2 Bot
 
-Audiosurf 2 image detection bot using LBP classifier.
+Audiosurf 2 bot using Haar Cascade.
 
 
 ## Cascade Classifier Docs
@@ -13,15 +13,19 @@ Audiosurf 2 image detection bot using LBP classifier.
 
 ### Raw Images
 
-Game screenshots with 600x500 dimension.
+3000 screenshots with 600x500 dimension. 1000 images for each lane.
 
 ### Positive Samples
 
-900+ samples extracted from 300 game screenshots using Annotation Tool.
+Blocks: 1151 samples from 350 images.
+
+Spikes: 530 samples from 300 images.
 
 ### Negative Samples
 
-The same images as positive samples but with blocks or spikes hidden.
+Blocks: 350 images.
+
+Spikes: 300 images.
 
 ## Terminal Commands
 
@@ -33,6 +37,7 @@ Read **Cascade Training** for information about command arguments.
 
 ```shell
 opencv_annotation.exe --annotations=pos_block.txt --images=positive_block/
+
 opencv_annotation.exe --annotations=pos_spike.txt --images=positive_spike/
 ```
 
@@ -48,8 +53,9 @@ The program opens all images inside the positive directory. You can draw rectang
 ### Create Positive Samples
 
 ```shell
-opencv_createsamples.exe -info pos_block.txt -w 24 -h 24 -num 900 -vec pos_block.vec
-opencv_createsamples.exe -info pos_spike.txt -w 24 -h 24 -num 900 -vec pos_spike.vec
+opencv_createsamples.exe -info pos_block.txt -w 24 -h 24 -num 1200 -vec pos_block.vec
+
+opencv_createsamples.exe -info pos_spike.txt -w 24 -h 24 -num 600 -vec pos_spike.vec
 ```
 
 Change `-num` argument as needed for a different value of positive samples.
@@ -57,8 +63,9 @@ Change `-num` argument as needed for a different value of positive samples.
 ### Train Cascade
 
 ```shell
-opencv_traincascade.exe -data cascade_block/ -vec pos_block.vec -bg neg_block.txt -numPos 800 -numNeg 350 -numStages 25 -w 24 -h 24
-opencv_traincascade.exe -data cascade_spike/ -vec pos_spike.vec -bg neg.txt -numPos 250 -numNeg 200 -numStages 20 -w 24 -h 24
+opencv_traincascade.exe -data cascade_block/ -vec pos_block.vec -bg neg_block.txt -numPos 900 -numNeg 350 -numStages 25 -w 24 -h 24 -precalcValBufSize 2048 -precalcIdxBufSize 2048
+
+opencv_traincascade.exe -data cascade_spike/ -vec pos_spike.vec -bg neg_spike.txt -numPos 400 -numNeg 300 -numStages 25 -w 24 -h 24 -precalcValBufSize 2048 -precalcIdxBufSize 2048
 ```
 
 Width and height dimensions need to be the same as the positive samples.

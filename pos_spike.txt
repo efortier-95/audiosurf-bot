@@ -1,0 +1,300 @@
+positive_spike\center_100.jpg 1 3 256 245 157
+positive_spike\center_108.jpg 3 125 219 108 68 276 82 51 33 227 64 44 32
+positive_spike\center_110.jpg 2 238 238 152 95 167 182 82 47
+positive_spike\center_111.jpg 1 8 312 212 125
+positive_spike\center_139.jpg 3 265 194 87 54 330 70 48 33 304 7 25 19
+positive_spike\center_141.jpg 2 365 184 99 62 318 30 38 23
+positive_spike\center_142.jpg 2 365 240 232 184 324 77 42 25
+positive_spike\center_144.jpg 1 348 130 77 50
+positive_spike\center_145.jpg 1 380 229 140 83
+positive_spike\center_191.jpg 3 377 214 114 67 229 120 49 27 312 75 27 23
+positive_spike\center_195.jpg 2 174 241 271 161 263 168 93 50
+positive_spike\center_2.jpg 2 367 252 228 170 292 45 53 30
+positive_spike\center_234.jpg 2 368 176 95 60 232 96 40 17
+positive_spike\center_237.jpg 1 180 163 78 45
+positive_spike\center_238.jpg 1 7 328 204 116
+positive_spike\center_254.jpg 1 246 223 128 84
+positive_spike\center_26.jpg 2 193 249 241 154 206 139 61 37
+positive_spike\center_27.jpg 1 142 206 102 62
+positive_spike\center_275.jpg 3 95 233 132 85 357 73 22 17 338 63 20 17
+positive_spike\center_280.jpg 2 282 141 67 43 372 194 103 65
+positive_spike\center_282.jpg 1 221 231 177 117
+positive_spike\center_288.jpg 2 267 185 89 58 3 329 204 123
+positive_spike\center_3.jpg 2 4 242 247 140 273 127 60 30
+positive_spike\center_309.jpg 2 350 115 65 43 326 11 45 36
+positive_spike\center_310.jpg 3 376 205 164 108 337 83 60 41 250 32 26 17
+positive_spike\center_311.jpg 2 361 172 101 61 248 81 31 21
+positive_spike\center_318.jpg 3 266 181 89 58 342 132 64 39 271 67 32 21
+positive_spike\center_319.jpg 2 379 218 132 87 274 74 36 25
+positive_spike\center_322.jpg 2 213 244 201 122 274 83 37 18
+positive_spike\center_327.jpg 3 259 204 103 72 273 78 33 21 233 77 33 17
+positive_spike\center_33.jpg 1 342 114 53 34
+positive_spike\center_330.jpg 2 272 134 65 36 217 114 54 27
+positive_spike\center_331.jpg 2 251 209 121 75 182 160 76 43
+positive_spike\center_335.jpg 1 276 136 67 46
+positive_spike\center_34.jpg 1 350 157 81 49
+positive_spike\center_346.jpg 1 255 225 111 67
+positive_spike\center_348.jpg 1 371 236 224 139
+positive_spike\center_35.jpg 1 266 177 86 54
+positive_spike\center_36.jpg 1 369 225 173 106
+positive_spike\center_363.jpg 1 349 125 61 38
+positive_spike\center_364.jpg 1 373 210 127 73
+positive_spike\center_375.jpg 4 278 139 66 40 350 87 35 27 311 49 25 20 340 50 21 15
+positive_spike\center_377.jpg 4 355 142 78 49 281 72 32 25 322 69 29 24 358 79 22 19
+positive_spike\center_380.jpg 4 372 245 223 172 256 89 40 31 309 83 32 26 352 94 32 20
+positive_spike\center_397.jpg 1 256 210 105 72
+positive_spike\center_417.jpg 2 368 192 102 60 265 178 85 55
+positive_spike\center_43.jpg 4 382 214 117 76 177 162 82 44 310 46 35 24 358 6 26 19
+positive_spike\center_435.jpg 3 142 196 104 64 313 80 32 19 264 69 24 17
+positive_spike\center_438.jpg 2 373 237 214 142 271 121 62 39
+positive_spike\center_44.jpg 3 11 232 223 144 308 49 35 27 355 24 23 22
+positive_spike\center_440.jpg 2 262 185 102 73 295 59 28 22
+positive_spike\center_444.jpg 1 356 156 93 60
+positive_spike\center_445.jpg 4 231 232 169 101 164 160 93 55 338 111 71 44 297 33 30 20
+positive_spike\center_453.jpg 1 135 201 118 67
+positive_spike\center_460.jpg 2 142 187 106 64 343 122 63 39
+positive_spike\center_461.jpg 1 365 194 111 68
+positive_spike\center_47.jpg 2 289 139 52 37 348 96 35 28
+positive_spike\center_470.jpg 3 258 183 100 64 286 107 49 34 295 78 38 24
+positive_spike\center_472.jpg 2 207 239 208 127 278 126 65 46
+positive_spike\center_473.jpg 1 259 192 98 67
+positive_spike\center_477.jpg 1 289 122 55 39
+positive_spike\center_478.jpg 1 265 167 89 59
+positive_spike\center_48.jpg 2 265 180 88 58 347 51 46 31
+positive_spike\center_49.jpg 2 200 224 209 134 349 74 51 36
+positive_spike\center_495.jpg 2 271 156 79 47 228 224 156 103
+positive_spike\center_50.jpg 1 353 129 69 41
+positive_spike\center_504.jpg 1 356 152 79 50
+positive_spike\center_505.jpg 1 371 243 224 162
+positive_spike\center_51.jpg 1 363 174 94 62
+positive_spike\center_52.jpg 1 366 229 229 168
+positive_spike\center_522.jpg 1 265 165 83 54
+positive_spike\center_528.jpg 2 381 224 122 77 328 89 40 22
+positive_spike\center_530.jpg 2 374 214 112 60 355 159 90 52
+positive_spike\center_556.jpg 3 371 208 103 66 6 355 188 104 311 40 34 26
+positive_spike\center_56.jpg 1 345 119 71 45
+positive_spike\center_58.jpg 1 368 199 108 69
+positive_spike\center_586.jpg 3 161 181 90 57 339 89 41 31 333 65 33 21
+positive_spike\center_597.jpg 2 357 144 78 56 3 297 224 145
+positive_spike\center_599.jpg 1 363 236 233 157
+positive_spike\center_606.jpg 4 266 182 87 54 307 74 21 19 333 80 26 18 358 95 29 22
+positive_spike\center_61.jpg 1 197 125 69 46
+positive_spike\center_62.jpg 1 155 191 95 60
+positive_spike\center_620.jpg 1 278 139 66 53
+positive_spike\center_621.jpg 1 222 224 178 111
+positive_spike\center_622.jpg 2 0 246 256 152 342 104 50 39
+positive_spike\center_63.jpg 1 4 325 211 124
+positive_spike\center_657.jpg 1 343 127 71 45
+positive_spike\center_658.jpg 1 367 174 112 73
+positive_spike\center_659.jpg 2 358 153 79 48 335 86 45 28
+positive_spike\center_673.jpg 1 268 161 81 54
+positive_spike\center_674.jpg 1 199 228 216 140
+positive_spike\center_684.jpg 2 373 229 181 110 343 105 50 36
+positive_spike\center_685.jpg 2 358 170 93 55 344 115 69 40
+positive_spike\center_7.jpg 1 206 234 209 138
+positive_spike\center_74.jpg 2 429 339 168 121 353 146 67 30
+positive_spike\center_75.jpg 1 370 187 108 65
+positive_spike\center_76.jpg 4 419 322 177 131 216 157 44 30 265 145 36 25 302 131 37 23
+positive_spike\center_83.jpg 1 386 274 211 153
+positive_spike\center_98.jpg 3 103 233 138 73 263 165 94 59 203 111 64 40
+positive_spike\center_99.jpg 2 192 241 246 159 164 168 90 50
+positive_spike\left_0.jpg 2 346 250 245 155 262 76 31 24
+positive_spike\left_1.jpg 1 337 245 186 105
+positive_spike\left_100.jpg 2 276 124 53 39 340 161 84 49
+positive_spike\left_101.jpg 1 243 171 88 54
+positive_spike\left_102.jpg 2 336 254 255 153 250 183 79 50
+positive_spike\left_103.jpg 1 171 228 207 141
+positive_spike\left_114.jpg 3 453 207 115 60 352 55 30 24 386 42 27 21
+positive_spike\left_118.jpg 3 338 179 88 56 394 138 69 37 351 17 28 19
+positive_spike\left_119.jpg 2 339 240 221 130 424 157 101 56
+positive_spike\left_125.jpg 3 344 149 83 48 373 76 34 23 367 28 21 19
+positive_spike\left_126.jpg 2 351 232 239 164 383 66 38 28
+positive_spike\left_128.jpg 2 427 161 83 42 370 103 39 25
+positive_spike\left_138.jpg 1 336 153 68 37
+positive_spike\left_139.jpg 1 347 223 185 121
+positive_spike\left_143.jpg 1 328 119 51 30
+positive_spike\left_144.jpg 1 341 174 86 52
+positive_spike\left_166.jpg 2 337 146 76 48 405 112 69 41
+positive_spike\left_167.jpg 2 359 212 110 69 445 172 107 56
+positive_spike\left_173.jpg 4 255 165 70 51 338 140 58 35 396 120 61 40 323 57 24 19
+positive_spike\left_174.jpg 4 157 253 227 165 346 216 113 63 441 181 104 59 323 51 33 23
+positive_spike\left_178.jpg 1 342 170 99 66
+positive_spike\left_188.jpg 2 341 152 69 43 287 127 51 30
+positive_spike\left_189.jpg 2 351 214 119 75 263 141 68 36
+positive_spike\left_190.jpg 1 241 181 89 54
+positive_spike\left_191.jpg 1 239 204 99 60
+positive_spike\left_209.jpg 2 336 122 70 40 333 75 41 32
+positive_spike\left_210.jpg 2 348 188 110 63 333 108 55 42
+positive_spike\left_213.jpg 2 354 177 103 70 324 70 32 21
+positive_spike\left_218.jpg 2 346 184 100 61 274 120 49 30
+positive_spike\left_219.jpg 2 258 131 70 47 384 343 193 119
+positive_spike\left_220.jpg 1 248 150 85 63
+positive_spike\left_221.jpg 1 169 238 234 146
+positive_spike\left_244.jpg 2 225 237 123 67 245 183 86 54
+positive_spike\left_255.jpg 2 236 208 104 58 270 83 36 21
+positive_spike\left_258.jpg 3 258 159 66 33 299 60 35 25 318 32 25 20
+positive_spike\left_259.jpg 3 234 200 101 65 310 33 38 25 330 9 37 19
+positive_spike\left_262.jpg 3 335 171 86 49 373 85 57 42 274 0 36 22
+positive_spike\left_263.jpg 3 351 217 151 96 397 96 69 47 276 29 36 22
+positive_spike\left_266.jpg 1 264 100 60 39
+positive_spike\left_267.jpg 1 255 149 78 51
+positive_spike\left_270.jpg 1 332 112 49 28
+positive_spike\left_271.jpg 1 335 119 60 44
+positive_spike\left_272.jpg 1 341 195 92 54
+positive_spike\left_273.jpg 1 347 242 249 171
+positive_spike\left_280.jpg 3 225 226 117 70 246 148 85 45 269 97 59 41
+positive_spike\left_281.jpg 2 212 232 142 92 248 158 84 53
+positive_spike\left_282.jpg 1 185 228 190 111
+positive_spike\left_291.jpg 1 408 124 64 43
+positive_spike\left_292.jpg 1 446 175 99 65
+positive_spike\left_296.jpg 1 399 97 56 34
+positive_spike\left_297.jpg 1 418 144 78 49
+positive_spike\left_298.jpg 1 477 227 118 77
+positive_spike\left_314.jpg 2 456 198 121 65 336 148 76 42
+positive_spike\left_315.jpg 1 357 229 118 78
+positive_spike\left_328.jpg 3 344 225 120 61 404 144 78 48 370 94 63 42
+positive_spike\left_329.jpg 3 459 207 130 68 369 317 205 128 399 126 80 50
+positive_spike\left_330.jpg 1 470 207 120 79
+positive_spike\left_372.jpg 3 344 204 122 73 405 118 81 59 304 10 51 30
+positive_spike\left_374.jpg 3 321 104 73 42 316 63 57 34 318 23 42 33
+positive_spike\left_375.jpg 4 344 170 85 49 325 110 83 42 327 63 51 41 267 6 44 33
+positive_spike\left_376.jpg 4 351 239 189 105 340 159 93 55 325 107 75 50 267 39 52 36
+positive_spike\left_377.jpg 3 343 241 186 107 340 166 98 64 271 83 55 43
+positive_spike\left_378.jpg 2 338 237 241 150 250 125 80 64
+positive_spike\left_379.jpg 1 240 214 95 62
+positive_spike\left_380.jpg 1 241 197 99 63
+positive_spike\left_402.jpg 1 401 109 65 46
+positive_spike\left_403.jpg 1 435 168 111 66
+positive_spike\left_419.jpg 1 399 142 70 47
+positive_spike\left_420.jpg 1 460 206 134 86
+positive_spike\left_43.jpg 1 334 226 208 129
+positive_spike\left_431.jpg 1 262 127 52 26
+positive_spike\left_432.jpg 1 252 144 73 39
+positive_spike\left_433.jpg 1 182 230 210 125
+positive_spike\left_451.jpg 1 340 238 253 185
+positive_spike\left_452.jpg 1 321 126 55 30
+positive_spike\left_453.jpg 1 336 152 80 53
+positive_spike\left_454.jpg 1 351 291 238 148
+positive_spike\left_475.jpg 1 349 210 103 63
+positive_spike\left_480.jpg 2 214 231 132 81 336 102 57 41
+positive_spike\left_481.jpg 1 331 133 92 54
+positive_spike\left_482.jpg 1 352 235 193 139
+positive_spike\left_492.jpg 2 153 244 254 168 364 45 43 25
+positive_spike\left_495.jpg 1 444 185 90 52
+positive_spike\left_5.jpg 2 327 74 53 39 266 55 53 35
+positive_spike\left_50.jpg 2 332 97 78 48 262 81 57 35
+positive_spike\left_51.jpg 2 358 229 113 74 246 171 80 42
+positive_spike\left_52.jpg 1 193 243 171 101
+positive_spike\left_532.jpg 1 242 175 90 53
+positive_spike\left_539.jpg 1 401 99 74 48
+positive_spike\left_540.jpg 1 439 185 104 66
+positive_spike\left_559.jpg 2 282 149 58 35 347 133 61 37
+positive_spike\left_560.jpg 2 347 164 76 47 242 193 89 42
+positive_spike\left_575.jpg 1 215 219 130 76
+positive_spike\left_6.jpg 2 340 135 77 57 258 112 71 45
+positive_spike\left_7.jpg 2 356 231 128 87 234 187 100 58
+positive_spike\left_90.jpg 1 278 109 52 36
+positive_spike\left_93.jpg 2 255 159 73 41 317 59 34 24
+positive_spike\left_94.jpg 2 193 228 180 114 311 73 43 30
+positive_spike\left_96.jpg 1 342 154 67 41
+positive_spike\left_97.jpg 1 355 235 127 79
+positive_spike\right_12.jpg 1 207 147 73 49
+positive_spike\right_127.jpg 2 289 165 81 49 262 121 47 35
+positive_spike\right_13.jpg 1 222 132 70 43
+positive_spike\right_14.jpg 1 130 230 135 84
+positive_spike\right_145.jpg 1 169 183 97 59
+positive_spike\right_146.jpg 1 133 127 80 51
+positive_spike\right_150.jpg 1 55 192 113 57
+positive_spike\right_166.jpg 2 284 153 79 51 287 85 30 21
+positive_spike\right_167.jpg 2 229 242 231 151 288 71 38 27
+positive_spike\right_182.jpg 2 281 198 99 66 282 100 49 35
+positive_spike\right_183.jpg 1 282 133 71 44
+positive_spike\right_184.jpg 1 281 204 108 61
+positive_spike\right_19.jpg 2 203 143 74 47 231 70 45 29
+positive_spike\right_195.jpg 2 125 134 71 44 229 108 51 34
+positive_spike\right_196.jpg 3 21 222 127 66 208 152 67 46 200 54 33 21
+positive_spike\right_197.jpg 2 131 234 138 81 196 65 35 23
+positive_spike\right_199.jpg 2 148 118 57 36 275 59 25 20
+positive_spike\right_20.jpg 2 108 235 148 98 209 91 45 30
+positive_spike\right_200.jpg 2 68 160 106 59 280 78 33 20
+positive_spike\right_204.jpg 1 288 160 76 44
+positive_spike\right_21.jpg 1 172 115 61 38
+positive_spike\right_213.jpg 3 286 102 54 42 210 59 34 25 251 50 27 19
+positive_spike\right_214.jpg 3 290 138 64 49 196 71 40 30 247 49 36 20
+positive_spike\right_217.jpg 2 75 162 109 56 210 135 68 42
+positive_spike\right_219.jpg 2 4 273 275 152 214 53 33 23
+positive_spike\right_22.jpg 1 123 127 80 39
+positive_spike\right_221.jpg 1 173 106 50 30
+positive_spike\right_222.jpg 2 131 170 77 35 262 60 30 18
+positive_spike\right_225.jpg 2 14 194 144 71 255 46 36 22
+positive_spike\right_23.jpg 1 13 215 133 74
+positive_spike\right_232.jpg 5 23 217 122 63 292 157 66 47 198 116 44 29 255 105 45 26 306 68 33 26
+positive_spike\right_235.jpg 1 123 158 78 39
+positive_spike\right_24.jpg 2 171 191 109 67 252 42 39 18
+positive_spike\right_251.jpg 2 219 127 65 47 277 79 36 28
+positive_spike\right_252.jpg 3 158 187 104 65 262 108 42 28 336 79 27 23
+positive_spike\right_253.jpg 2 232 129 55 36 327 61 31 27
+positive_spike\right_254.jpg 2 173 184 99 60 319 54 37 25
+positive_spike\right_255.jpg 2 6 238 269 171 308 81 44 27
+positive_spike\right_256.jpg 1 300 134 55 41
+positive_spike\right_258.jpg 1 286 177 86 61
+positive_spike\right_279.jpg 1 298 153 63 39
+positive_spike\right_284.jpg 1 234 143 61 35
+positive_spike\right_285.jpg 1 162 186 97 60
+positive_spike\right_287.jpg 1 193 159 73 38
+positive_spike\right_288.jpg 2 32 233 258 158 169 152 34 29
+positive_spike\right_290.jpg 2 237 225 199 131 173 153 54 39
+positive_spike\right_300.jpg 1 137 151 65 41
+positive_spike\right_302.jpg 1 18 211 129 70
+positive_spike\right_318.jpg 1 286 147 74 46
+positive_spike\right_319.jpg 1 256 224 166 105
+positive_spike\right_329.jpg 1 158 121 60 37
+positive_spike\right_330.jpg 1 101 137 87 48
+positive_spike\right_332.jpg 2 240 82 34 24 201 74 29 27
+positive_spike\right_340.jpg 1 180 184 94 52
+positive_spike\right_349.jpg 2 18 248 261 147 55 395 158 93
+positive_spike\right_352.jpg 2 214 130 67 46 293 97 46 44
+positive_spike\right_353.jpg 2 152 222 125 72 284 134 78 56
+positive_spike\right_354.jpg 2 284 231 106 71 256 59 38 30
+positive_spike\right_356.jpg 1 199 135 94 47
+positive_spike\right_358.jpg 2 134 217 141 92 262 50 36 24
+positive_spike\right_361.jpg 1 205 145 73 43
+positive_spike\right_362.jpg 2 104 241 176 117 209 69 40 29
+positive_spike\right_371.jpg 3 224 125 56 46 319 62 33 27 292 50 27 23
+positive_spike\right_372.jpg 3 157 183 109 72 308 85 44 30 278 70 34 25
+positive_spike\right_374.jpg 2 291 188 77 59 227 151 59 38
+positive_spike\right_378.jpg 2 60 195 106 58 326 66 28 19
+positive_spike\right_394.jpg 1 128 132 72 42
+positive_spike\right_41.jpg 3 246 229 186 123 218 130 62 40 162 110 57 39
+positive_spike\right_414.jpg 2 83 181 91 55 202 146 75 55
+positive_spike\right_42.jpg 2 185 182 81 59 111 144 79 52
+positive_spike\right_421.jpg 2 164 202 103 65 248 84 45 35
+positive_spike\right_424.jpg 1 218 126 65 44
+positive_spike\right_425.jpg 1 155 213 113 76
+positive_spike\right_43.jpg 2 23 267 248 149 24 193 112 71
+positive_spike\right_438.jpg 2 291 156 65 42 243 94 38 25
+positive_spike\right_439.jpg 2 267 235 144 93 232 98 43 25
+positive_spike\right_445.jpg 2 159 221 116 69 262 79 37 26
+positive_spike\right_447.jpg 2 286 149 72 46 267 86 26 18
+positive_spike\right_448.jpg 2 232 230 209 125 271 46 39 20
+positive_spike\right_455.jpg 2 191 154 85 60 287 142 62 38
+positive_spike\right_456.jpg 3 19 260 252 165 283 198 90 51 279 140 73 44
+positive_spike\right_466.jpg 2 30 212 122 66 190 162 87 61
+positive_spike\right_49.jpg 1 142 145 73 42
+positive_spike\right_50.jpg 2 54 189 122 68 274 63 34 26
+positive_spike\right_53.jpg 1 286 149 61 44
+positive_spike\right_6.jpg 1 293 109 64 39
+positive_spike\right_7.jpg 1 280 154 83 54
+positive_spike\right_73.jpg 2 289 139 69 52 256 82 35 20
+positive_spike\right_74.jpg 3 284 219 105 88 245 68 44 26 288 26 26 23
+positive_spike\right_75.jpg 2 234 98 56 35 289 17 32 29
+positive_spike\right_76.jpg 2 222 130 63 40 291 4 32 31
+positive_spike\right_77.jpg 2 184 134 91 51 293 39 37 30
+positive_spike\right_78.jpg 2 39 231 234 144 295 90 43 30
+positive_spike\right_81.jpg 3 291 164 67 47 237 49 22 21 273 42 23 18
+positive_spike\right_82.jpg 2 278 182 110 72 222 56 38 21
+positive_spike\right_86.jpg 3 90 170 87 48 214 142 77 45 274 90 32 22
+positive_spike\right_88.jpg 4 20 262 243 167 261 67 37 27 246 47 25 24 283 37 22 24
+positive_spike\right_93.jpg 3 19 240 263 160 143 129 74 53 237 107 56 29
+positive_spike\right_94.jpg 2 67 169 103 56 206 124 82 48
+positive_spike\right_96.jpg 1 19 294 234 146
