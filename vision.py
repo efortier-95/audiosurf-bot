@@ -23,9 +23,6 @@ class Vision:
     @staticmethod
     def draw_rectangles(haystack_img, rectangles, color, name):
 
-        font_scale = 0.5
-        line_type = 2
-
         for (x, y, w, h) in rectangles:
 
             # Rectangle positions
@@ -33,20 +30,21 @@ class Vision:
             bottom_right = (x + w, y + h)
 
             # Draw rectangle and with name overlay
-            cv.rectangle(haystack_img, top_left, bottom_right, color, line_type)
-            cv.putText(haystack_img, name, (x, y - 5), cv.FONT_HERSHEY_SIMPLEX, font_scale, color, line_type)
+            cv.rectangle(haystack_img, top_left, bottom_right, color, 2)
+            cv.putText(haystack_img, name, (x, y - 5), cv.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
         return haystack_img
 
     # Return image with click points drawn as crosshairs
     @staticmethod
-    def draw_crosshairs(haystack_img, points, color):
+    def draw_crosshairs(haystack_img, points, color, name):
 
-        marker_type = cv.MARKER_CROSS
+        marker_type = cv.MARKER_TILTED_CROSS
 
         for (center_x, center_y) in points:
             # draw the center point
-            cv.drawMarker(haystack_img, (center_x, center_y), color, marker_type)
+            cv.drawMarker(haystack_img, (center_x, center_y), color, marker_type, 10, 2)
+            cv.putText(haystack_img, name, (center_x - 35, center_y - 20), cv.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
         return haystack_img
 
