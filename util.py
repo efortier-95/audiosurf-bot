@@ -17,7 +17,7 @@ def rename_img(path, count):
 
 # Change when training different cascade
 neg_dir = 'negative_block'
-filename = 'neg_block.txt'
+filename = 'training_data/neg_block.txt'
 
 
 # Read files in the negative directory and generates negative file
