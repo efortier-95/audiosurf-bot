@@ -44,7 +44,7 @@ class Vision:
         for (center_x, center_y) in points:
             # draw the center point
             cv.drawMarker(haystack_img, (center_x, center_y), color, marker_type, 10, 2)
-            cv.putText(haystack_img, name, (center_x - 35, center_y - 20), cv.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+            cv.putText(haystack_img, name, (center_x - 30, center_y - 15), cv.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
         return haystack_img
 
