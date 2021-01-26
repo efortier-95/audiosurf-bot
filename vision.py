@@ -21,7 +21,7 @@ class Vision:
 
     # Return image with rectangles drawn from [x, y, w, h]
     @staticmethod
-    def draw_rectangles(haystack_img, rectangles, color, name):
+    def draw_rectangles(haystack_img, rectangles, color, name=None):
 
         for (x, y, w, h) in rectangles:
 
@@ -37,14 +37,14 @@ class Vision:
 
     # Return image with click points drawn as crosshairs
     @staticmethod
-    def draw_crosshairs(haystack_img, points, color, name):
+    def draw_crosshairs(haystack_img, points, color, name=None):
 
         marker_type = cv.MARKER_TILTED_CROSS
 
         for (center_x, center_y) in points:
             # draw the center point
-            cv.drawMarker(haystack_img, (center_x, center_y), color, marker_type, 10, 2)
-            cv.putText(haystack_img, name, (center_x - 30, center_y - 15), cv.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+            cv.drawMarker(haystack_img, (center_x, center_y), color, marker_type, 10, 1)
+            cv.putText(haystack_img, name, (center_x - 40, center_y - 15), cv.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
 
         return haystack_img
 
