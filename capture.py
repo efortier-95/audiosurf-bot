@@ -4,14 +4,7 @@ import win32con
 import numpy as np
 
 
-class WindowCapture:
-
-    # Properties
-    w = 0
-    h = 0
-    offset_x = 600
-    offset_y = 200
-    hwnd = None
+class Capture:
 
     # Constructor
     def __init__(self, window_name=None):
@@ -63,18 +56,4 @@ class WindowCapture:
 
         # Make image contiguous
         img = np.ascontiguousarray(img)
-
         return img
-
-    # Find names of all active windows
-    @staticmethod
-    def list_window_names():
-        def winEnumHandler(hwnd, ctx):
-            if win32gui.IsWindowVisible(hwnd):
-                print(hex(hwnd), win32gui.GetWindowText(hwnd))
-
-        win32gui.EnumWindows(winEnumHandler, None)
-
-    # Translate pixel position on screenshot to window position
-    def get_screen_position(self, pos):
-        return pos[0] + self.offset_x, pos[1] + self.offset_y

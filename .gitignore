@@ -3,7 +3,8 @@ __pycache__/
 negative_block/
 negative_spike/
 opencv
-positive_block
-positive_spike
+positive_block/
+positive_spike/
 raw_images/
+training_data/
 venv/
