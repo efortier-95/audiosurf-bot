@@ -73,3 +73,7 @@ Width and height dimensions need to be the same as the positive samples.
 Use `-precalcValBufSize` and `-precalcIdxBufSize` arguments to allocate more memory (in Mb) for training. Total values of those two arguments should not be more than available system memory.
 
 To change the classifier from Haar to LBP, add `-featureType LBP` argument. 
+
+## Limitations
+
+This bot currently only works with the [GlowTastic](https://steamcommunity.com/sharedfiles/filedetails/?id=808429383&searchtext=glowtastic) skin. Keyboard inputs were used because the game blocks mouse movements from Python script.
