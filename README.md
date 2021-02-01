@@ -2,6 +2,11 @@
 
 Audiosurf 2 bot using Haar Cascade.
 
+## Quickstart
+
+Run the script and play the game. The bot will take over once it detects incoming blocks and spikes.
+
+The current x and y offsets in `capture` are based on 1920x1080 monitor. Change them accoridng to monitor resolution to get the center region of the game.
 
 ## Cascade Classifier Docs
 - [Cascade Classifier](https://docs.opencv.org/4.5.1/db/d28/tutorial_cascade_classifier.html)

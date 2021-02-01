@@ -9,9 +9,10 @@ def main():
     print('Bot Initialized')
     while True:
         screenshot = cap.get_screenshot()
-        bot.dodge_spike(screenshot)
         bot.hit_block(screenshot)
+        bot.dodge_spike(screenshot)
 
 
 if __name__ == "__main__":
     main()
+    print('\nBot Terminated')
