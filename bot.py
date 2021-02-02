@@ -25,15 +25,12 @@ class Bot:
         self.d = 0x44
 
     def hold_left(self):
-        """Hold down 'a' key"""
         win32api.keybd_event(self.a, 0, 0, 0)
 
     def hold_right(self):
-        """Hold down 'd' key"""
         win32api.keybd_event(self.d, 0, 0, 0)
 
     def release(self):
-        """Release both 'a' and 'd' key"""
         win32api.keybd_event(self.a, 0, win32con.KEYEVENTF_KEYUP, 0)
         win32api.keybd_event(self.d, 0, win32con.KEYEVENTF_KEYUP, 0)
 
@@ -56,7 +53,7 @@ class Bot:
         """Calculate distance of incoming blocks
         and move to those when they are close
         """
-        detect_block = self.block_cascade.detectMultiScale(screenshot)
+        detect_block = self.block_cascade.detectMultiScale(image=screenshot, minSize=(40, 40))
 
         if len(detect_block) > 0:
             blocks = self.get_click_points(detect_block)
@@ -64,37 +61,51 @@ class Bot:
             for block in blocks:
                 block_x, block_y = block
 
+                cv.drawMarker(screenshot, block, (0, 255, 0), cv.MARKER_TILTED_CROSS, 20, 4)
+
                 # Distance from block to ship
                 bx = block_x - self.ship_x
                 by = abs(self.ship_y - block_y)
 
                 if by < 75:
                     # Left block
-                    if bx < -15:
+                    if - 175 < bx < -20:
                         if self.center:
                             self.hold_left()
-                            self.left = True
                             self.center = False
+                            self.left = True
                         elif self.right:
                             self.release()
                             self.right = False
                             self.center = True
                     # Right block
-                    elif bx > 15:
+                    elif 175 > bx > 20:
                         if self.center:
                             self.hold_right()
-                            self.right = True
                             self.center = False
+                            self.right = True
                         elif self.left:
                             self.release()
                             self.left = False
                             self.center = True
+                    # Far left block
+                    elif bx < -175 and self.right:
+                        self.release()
+                        self.hold_left()
+                        self.right = False
+                        self.left = True
+                    # Far right block
+                    elif bx > 175 and self.left:
+                        self.release()
+                        self.hold_right()
+                        self.left = False
+                        self.right = True
 
     def dodge_spike(self, screenshot):
         """Calculate distance of incoming spikes
         and move to another lane to dodge them
         """
-        detect_spike = self.spike_cascade.detectMultiScale(screenshot)
+        detect_spike = self.spike_cascade.detectMultiScale(screenshot, minSize=(48, 48))
 
         if len(detect_spike) > 0:
             spikes = self.get_click_points(detect_spike)
@@ -102,13 +113,15 @@ class Bot:
             for spike in spikes:
                 spike_x, spike_y = spike
 
+                cv.drawMarker(screenshot, spike, (0, 0, 255), cv.MARKER_TILTED_CROSS, 20, 4)
+
                 # Distance from spike to ship
                 sx = spike_x - self.ship_x
                 sy = abs(self.ship_y - spike_y)
 
-                if sy < 125:
+                if sy < 100:
                     # Center spike
-                    if -15 <= sx <= 15:
+                    if -20 <= sx <= 20:
                         if self.center:
                             # Randomly move left or right if ship is already centered
                             move = randint(0, 1)
