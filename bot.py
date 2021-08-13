@@ -78,6 +78,8 @@ class Bot:
                             self.release()
                             self.right = False
                             self.center = True
+                            from time import sleep
+                            sleep(0.07)
                     # Right block
                     elif 175 > bx > 20:
                         if self.center:
@@ -88,6 +90,8 @@ class Bot:
                             self.release()
                             self.left = False
                             self.center = True
+                            from time import sleep
+                            sleep(0.07)
                     # Far left block
                     elif bx < -175 and self.right:
                         self.release()
@@ -132,6 +136,8 @@ class Bot:
                                 self.hold_right()
                                 self.right = True
                             self.center = False
+                            from time import sleep
+                            sleep(0.07)
                     # Left spike
                     elif sx < -20:
                         if self.left:
